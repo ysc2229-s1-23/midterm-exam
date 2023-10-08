@@ -1,60 +1,60 @@
 """
-Problem: Calculate the nth Fibonacci Number
+Problem: Reverse a Stack Using a Queue
 
 Description:
-The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones, typically starting with 0 and 1. The sequence starts as: 0, 1, 1, 2, 3, 5, 8, 13, and so on.
-
-Your task is to create a function that, given a non-negative integer `n`, returns the nth number in the Fibonacci sequence.
+A stack is a data structure that stores elements in a last-in-first-out (LIFO) order. A queue is another data structure that stores elements in a first-in-first-out (FIFO) order. Using the operations provided by a basic queue (enqueue, dequeue), your task is to reverse a given stack.
 
 Function Signature:
-def fibonacci(n: int) -> int:
+def reverse_stack(stack: List[int]) -> List[int]:
 
 Inputs:
-- n (int): A non-negative integer representing the position in the Fibonacci sequence. (0 ≤ n ≤ 10^5)
+- stack (List[int]): A list of integers representing the stack. The top of the stack is the last element of the list.
 
 Returns:
-- int: The nth number in the Fibonacci sequence.
+- List[int]: The reversed stack. 
 
 Examples:
 
 1. 
 Input: 
-n = 5
+stack = [1, 2, 3, 4, 5]
 Output: 
-5
+[5, 4, 3, 2, 1]
 Explanation:
-The sequence starts as 0, 1, 1, 2, 3, 5. The 5th number is 5.
+The top of the original stack is 5. After reversing, the top becomes 1.
 
 2. 
 Input: 
-n = 7
+stack = [10, 20, 30]
 Output: 
-13
+[30, 20, 10]
 Explanation:
-The sequence starts as 0, 1, 1, 2, 3, 5, 8, 13. The 7th number is 13.
+The original stack has 30 at the top. After reversing, 10 is at the top.
 
 3. 
 Input:
-n = 0
+stack = [7]
 Output:
-0
+[7]
 Explanation:
-The sequence starts with 0.
+A stack with a single element remains unchanged when reversed.
 
 Notes:
-- Do not use any recursive methods as they can lead to exponential time complexities.
-- Iteratively calculate the Fibonacci numbers for efficient computation.
-- The Fibonacci sequence is defined as:
-    - F(0) = 0
-    - F(1) = 1
-    - F(n) = F(n-1) + F(n-2) for n > 1
+- Do not use any additional data structures other than the queue provided.
+- Consider the basic operations provided by a queue: enqueue (to insert an item) and dequeue (to remove an item).
+- Think about how you can utilize these operations to help reverse the stack.
+- Although this problem can be solved without using a queue, you will get no credits for the problem if you do not use a queue.
+- Please reverse the stack in-place. Do not create a new stack.
 
 Tags:
-- Math
-- Iteration
+- Stack
+- Queue
+- Data Structures
 """
 
-def fibonacci(n):
-    return 0
+from collections import deque
+from typing import List
 
-
+def reverse_stack(stack: List[int]) -> List[int]:
+    # Your implementation here
+    pass

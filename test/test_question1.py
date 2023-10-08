@@ -1,24 +1,36 @@
-from questions.question1 import fibonacci
-import time
+from time import time
+from questions.question1 import reverse_stack
 
-def test_fibonacci():
-    # Basic tests
-    assert fibonacci(0) == 0
-    assert fibonacci(1) == 1
-    assert fibonacci(2) == 1
-    assert fibonacci(3) == 2
-    assert fibonacci(4) == 3
-    assert fibonacci(5) == 5
-    assert fibonacci(6) == 8
-    assert fibonacci(7) == 13
+def test_reverse_stack():
+    # Basic Tests
+    assert reverse_stack([1, 2, 3, 4, 5]) == [5, 4, 3, 2, 1]
+    assert reverse_stack([10, 20, 30]) == [30, 20, 10]
+    assert reverse_stack([7]) == [7]
+    assert reverse_stack([]) == []
 
-    # Large input test
-    start_time = time.time()
-    # This doesn't check for a correct value but ensures the function returns in a timely manner
-    fib_result = fibonacci(100000)
-    end_time = time.time()
-    assert (end_time - start_time) < 2  # function should return within 2 seconds for O(n) complexity
+    # Edge Cases
+    assert reverse_stack([1, 1, 2, 3, 5, 5]) == [5, 5, 3, 2, 1, 1]  # Duplicates
+    assert reverse_stack([10**5, 10**6, 10**7]) == [10**7, 10**6, 10**5]  # Large values
+    assert reverse_stack([5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5]  # Already reversed stack
+    
+    class StackMock(list):
+        def __getitem__(self, index):
+            # Queues shouldn't allow indexing.
+            raise AssertionError("Indexing detected. Make sure you're using queue operations.")
+
+    try:
+        reverse_stack(StackMock([1, 2, 3, 4, 5]))
+        reverse_stack(StackMock([10, 20, 30]))
+    except AssertionError:
+        pass  # Test will fail if the above block doesn't raise an AssertionError
+
+    # Large Unit Test
+    large_stack = list(range(1, 10**5 + 1))
+    start_time = time()
+    assert reverse_stack(large_stack) == list(range(10**5, 0, -1))
+    end_time = time()
+    assert (end_time - start_time) < 1
     
     print("All tests passed!")
 
-test_fibonacci()
+test_reverse_stack()
