@@ -1,4 +1,4 @@
-from questions.question4 import KthPlusTwoSmallest
+from solutions.question4 import KthPlusTwoSmallest
 
 def test_kth_plus_two_smallest():
     kthSmallest1 = KthPlusTwoSmallest([8, 7, 6, 5, 4, 3, 2, 1], 2)

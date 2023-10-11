@@ -1,4 +1,4 @@
-from questions.question3 import find_second_next_letter  # Assuming you named the function like this
+from solutions.question3 import find_second_next_letter  # Assuming you named the function like this
 
 from random import choice, seed
 from string import ascii_lowercase

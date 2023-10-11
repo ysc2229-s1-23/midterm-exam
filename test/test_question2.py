@@ -1,4 +1,4 @@
-from questions.question2 import merge_sorted_lists, ListNode
+from solutions.question2 import merge_sorted_lists, ListNode
 from random import randint
 
 def test_merge_sorted_lists():

@@ -1,5 +1,5 @@
 from time import time
-from questions.question1 import reverse_stack
+from solutions.question1 import reverse_stack
 
 def test_reverse_stack():
     # Basic Tests
